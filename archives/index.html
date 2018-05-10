@@ -1,707 +1,361 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>
-        
-        jiaxing&#39;s Studio
-        
-    </title>
-    <link rel="icon" href= /assets/favicon.ico>
-    <!-- TODO: 在font-face加载完毕后改变字体  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
-    <!-- 提前加载place holder  -->
-    <style type="text/css">
-        @font-face {
-            font-family: 'Oswald-Regular';
-            src: url(/font/Oswald-Regular.ttf);
-        }
-    </style>
-    <style type="text/css">
-        .site-intro {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            overflow: hidden;
-            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
-        }
-        .site-intro-placeholder {
-            position: absolute;
-            z-index: -2;
-            top: 0;
-            left: 0px;
-            width: calc(100% + 300px);
-            height: 100%;
-            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-            background-position: center center;
-            transform: translate3d(-226px, 0, 0);
-            animation: gradient-move 2.5s ease-out 0s 1;
-        }
-        @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
-    <link rel="stylesheet" href = /css/style.css?v=20171227 />
-    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
-    
-    <script src="/scripts/main.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Archives | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://jiaxingwangwjx.github.io/archives/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-    
-    
-<header class="header">
-
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href=/>jiaxing's Studio.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro">
-    
-    <!-- 主页  -->
-            
-    <div class="site-intro-img" style="background-image: url(/)"></div>
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
     </div>
-</div>
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <script>
-            var browser = {
-                    versions: function () {
-                        var u = window.navigator.userAgent;
-                        return {
-                            userAgent: u,
-                            trident: u.indexOf('Trident') > -1, //IE内核
-                            presto: u.indexOf('Presto') > -1, //opera内核
-                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-                            iPad: u.indexOf('iPad') > -1, //是否为iPad
-                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-                        };
-                    }()
-                }
-
-            function fontLoaded(){
-                console.log('font loaded');
-                if (document.getElementsByClassName('site-intro-meta')) {
-                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-                        if (postIntroTags) {
-                            postIntroTags.classList.add('post-fade-in');
-                        }
-                        if (postIntroMeat) {
-                            postIntroMeat.classList.add('post-fade-in');
-                        }
-                    }
-                }
-                
-            console.log("userAgent:" + browser.versions.userAgent);
-            // UC不支持跨域，所以直接显示
-            if (browser.versions.uc) {
-                console.log("UCBrowser");
-                fontLoaded();
-            } else {
-                WebFont.load({
-                    custom: {
-                        families: ['Oswald-Regular']
-                    },
-                    loading: function () {  //所有字体开始加载
-                        // console.log('loading');
-                    },
-                    active: function () {  //所有字体已渲染
-                        fontLoaded();
-                    },
-                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                        console.log('inactive: timeout');
-                        fontLoaded();
-                    },
-                    timeout: 7000 // Set the timeout to two seconds
-                });
-            }
-        </script>
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/11/docker/" >
-                
-                    <span>docker</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/11/docker/" >
-                <div class="abstract-content">
-                    
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/11</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/SVM-LEARN/" >
-                
-                    <span>SVM_LEARN</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/SVM-LEARN/" >
-                <div class="abstract-content">
-                    
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/BUG_python/" >
-                
-                    <span>BUG</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/BUG_python/" >
-                <div class="abstract-content">
-                    1.问题描述：RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to funct…..参考链接：https://www.cnblogs.com/harelion/p/5637767.html解决方案：pip安装matplotlib之后，会在根目录下产生一个.matplotlib的目录:在这个目录下创建一个名为matplotlibrc的文件，内容是：
-backend: TkAgg
-然后保存退出，重启Python交互界面或重新运行脚本，import正常执行。
-...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/excel-leran/" >
-                
-                    <span>excel-leran</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/excel-leran/" >
-                <div class="abstract-content">
-                    
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/markdown-learn/" >
-                
-                    <span>markdown learn</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/markdown-learn/" >
-                <div class="abstract-content">
-                    一级标题2 3 4 级标题有问题？
-五级标题六级标题无序列表
-1
-2
-3
-
-有序列表
-1
-2
-3
-
-引用
-测试
-
-链接图片粗体斜体代码引用hello word
-12import numpyimport os
-表格显示链接中带括号的图片test test
-二级标题三级标题四级标题
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/学习网站/" >
-                
-                    <span>学习网站</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/学习网站/" >
-                <div class="abstract-content">
-                    python:    https://www.youtube.com/user/sentdex  youtube上python讲师        https://www.youtube.com/watch?v=KTeVOb8gaD4&amp;index=2&amp;list=PLQVvvaa0QuDd0flgGphKCej-9jp-QdzZ3    我正在学习他的python预测股票视频
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/vi常用命令/" >
-                
-                    <span>vi常用命令</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/vi常用命令/" >
-                <div class="abstract-content">
-                    0 移动到当前行的首部$ 移动到当前行的尾部nH: 移动到当前屏幕首部下的n行nL: 移动到当前屏幕尾部上的n行ctrl+B: 移动到上一屏ctrl+F: 移动到下一屏nG: 移动到n行:n: 移动到n行G:移动到最后一行
-以下数据仅为测试使用。ctrl;dsfsdfsdfdsfsdfsdfdsfsfsdfsfsfdsf1
-12121212121
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/python入门学习记录笔记/" >
-                
-                    <span>python入门学习记录笔记</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/python入门学习记录笔记/" >
-                <div class="abstract-content">
-                    python 模块
-pandas
-os  #包含普遍的操作系统功能，与具体的平台无关。
-re
-time
-urllib
-Quandl
-sklearn  :  datasets :  digits=datasets.load_digits()
-            x,y=digits.data[:-1],digits.targer[:-1]
-        svm : clf=svm.SVC(gamma=0.001,C=100)
-collections
-numpy
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/hexo/" >
-                
-                    <span>博客记录</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/hexo/" >
-                <div class="abstract-content">
-                    http://localhost:4000/
-2016年开始接触hexo+github博客。做了一些设置，计划。
-然后。。。
-今天这个博客重新建立起来。
-记录：
-在blog这个目录下，不需要使用git status，git commit，git push等命令。
-远程同步的内容只有public子文件目录里面的内容。同步命令为hexo deploy。
-错错错
-千万不要hexo deploy
-在主目录放一个index.html,做了修改后直接hexo ggit commitgit push
-或者访问目录直接输入https://jiaxingwangwjx.github.io/public/
-...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/10/hello-world/" >
-                
-                    <span>Hello World</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/10/hello-world/" >
-                <div class="abstract-content">
-                    Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/10</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
-            
-        </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
-    
+          <a class="main-nav-link" href="/">Home</a>
         
-            
-                <a href="mailto:1556828718@qq.com" class="iconfont-archer email" title=email ></a>
-            
+          <a class="main-nav-link" href="/archives">Archives</a>
         
-    
+      </nav>
+      <nav id="sub-nav">
         
-            
-                <a href="//jiaxingwangwjx.github.io/" class="iconfont-archer github" target="_blank" title="github"></a>
-            
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-    
-        
-    
-
-    </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-        <span id="busuanzi_container_site_pv">VISITOR VOLUME: <span id="busuanzi_value_site_pv"></span>
-        </span>
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top">&#xe639;</div>
-    <div class="sidebar">
-    <div class="sidebar-header sidebar-header-show-archive">
-        <div class="sidebar-category">
-            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
-            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
-        </div>
-    </div>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-archive">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 10 </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2018/01/11/docker/" >docker</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/SVM-LEARN/" >SVM_LEARN</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/BUG_python/" >BUG</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/学习网站/" >学习网站</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/vi常用命令/" >vi常用命令</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/python入门学习记录笔记/" >python入门学习记录笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/markdown-learn/" >markdown learn</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/excel-leran/" >excel-leran</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/hexo/" >博客记录</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2018/01/10/hello-world/" >Hello World</a>
-        </li>
-    
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiaxingwangwjx.github.io"></form>
+      </div>
     </div>
   </div>
-        <div class="sidebar-tags">
-    <div class="sidebar-tags-name">
+</header>
+      <div class="outer">
+        <section id="main">
+  
+  
     
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/23/learn1/" class="archive-article-date">
+  <time datetime="2018-01-23T02:53:39.000Z" itemprop="datePublished">Jan 23</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/23/learn1/">learn1</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/11/linux/" class="archive-article-date">
+  <time datetime="2018-01-11T07:36:21.000Z" itemprop="datePublished">Jan 11</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/11/linux/">linux</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/11/docker/" class="archive-article-date">
+  <time datetime="2018-01-11T01:39:32.000Z" itemprop="datePublished">Jan 11</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/11/docker/">docker</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/SVM-LEARN/" class="archive-article-date">
+  <time datetime="2018-01-10T13:47:02.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/SVM-LEARN/">SVM_LEARN</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/BUG_python/" class="archive-article-date">
+  <time datetime="2018-01-10T13:34:04.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/BUG_python/">BUG</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/excel-leran/" class="archive-article-date">
+  <time datetime="2018-01-10T12:51:04.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/excel-leran/">excel-leran</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/markdown-learn/" class="archive-article-date">
+  <time datetime="2018-01-10T12:49:10.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/markdown-learn/">markdown learn</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/学习网站/" class="archive-article-date">
+  <time datetime="2018-01-10T12:46:55.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/学习网站/">学习网站</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/vi常用命令/" class="archive-article-date">
+  <time datetime="2018-01-10T12:46:43.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/vi常用命令/">vi常用命令</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/01/10/python入门学习记录笔记/" class="archive-article-date">
+  <time datetime="2018-01-10T12:21:09.000Z" itemprop="datePublished">Jan 10</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/10/python入门学习记录笔记/">python入门学习记录笔记</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tag-list"></div>
-</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/23/learn1/">learn1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/11/linux/">linux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/11/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/10/SVM-LEARN/">SVM_LEARN</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/10/BUG_python/">BUG</a>
+          </li>
+        
+      </ul>
     </div>
-</div> 
-    <script>
-    var jsInfo = {
-        root: '/'
-    }
-</script>
-    <!-- 不蒜子  -->
-    
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ统计  -->
-    
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-    </body>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
 </html>
-
-
